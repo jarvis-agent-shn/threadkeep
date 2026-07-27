@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ThreadKeep — Library &amp; Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-header">
+        <div class="brand">
+          <img src="icons/icon48.png" alt="" width="32" height="32" class="brand-icon" />
+          <div>
+            <h1 class="brand-name">ThreadKeep</h1>
+            <p class="brand-tagline">AI Chat Exporter — library &amp; settings</p>
+          </div>
+        </div>
+        <span id="plan-badge" class="badge">Free</span>
+      </header>
+
+      <main>
+        <section class="card" aria-labelledby="library-heading">
+          <div class="card-header">
+            <h2 id="library-heading">Your library</h2>
+            <div class="card-header-actions">
+              <button type="button" id="export-all-md" class="secondary-btn">Export all (Markdown)</button>
+              <button type="button" id="export-all-json" class="secondary-btn">Export all (JSON)</button>
+            </div>
+          </div>
+
+          <label class="visually-hidden" for="search">Search saved chats</label>
+          <input type="search" id="search" class="search-input" placeholder="Search saved chats (title, site)…" />
+          <p id="search-hint" class="hint"></p>
+
+          <div id="empty-state" class="empty-state" hidden>
+            <p><strong>No saved chats yet.</strong></p>
+            <p>
+              Open the ThreadKeep popup on a chat page (ChatGPT, Claude, Gemini, Grok, Perplexity or Copilot) and click
+              <em>Export this chat</em> with <em>Save to library</em> checked. Saved chats will show up here.
+            </p>
+          </div>
+
+          <ul id="chat-list" class="chat-list" hidden></ul>
+          <p id="library-status" class="status" role="status" aria-live="polite"></p>
+        </section>
+
+        <section id="pro" class="card" aria-labelledby="pro-heading">
+          <h2 id="pro-heading">ThreadKeep Pro</h2>
+          <div class="plan-grid">
+            <div class="plan-col">
+              <h3>Free</h3>
+              <ul>
+                <li>Export current chat to Markdown</li>
+                <li>Save up to 10 chats in your library</li>
+                <li>Title/site search</li>
+              </ul>
+            </div>
+            <div class="plan-col plan-col-pro">
+              <h3>Pro</h3>
+              <ul>
+                <li>JSON export</li>
+                <li>Unlimited library storage</li>
+                <li>Bulk / export-all</li>
+                <li>Full-text cross-chat search</li>
+                <li>Auto-backup <em>(coming soon)</em></li>
+              </ul>
+            </div>
+          </div>
+
+          <button type="button" id="upgrade-btn" class="primary-btn">Upgrade to Pro</button>
+          <p id="pro-status" class="hint" role="status" aria-live="polite"></p>
+
+          <details class="dev-panel">
+            <summary>Developer testing (remove before Chrome Web Store submission)</summary>
+            <label class="checkbox-label">
+              <input type="checkbox" id="dev-pro-toggle" />
+              Simulate Pro status locally (no payment, testing only)
+            </label>
+          </details>
+        </section>
+
+        <section class="card" aria-labelledby="about-heading">
+          <h2 id="about-heading">How ThreadKeep works</h2>
+          <ul class="about-list">
+            <li>ThreadKeep only reads a page when you click <em>Export this chat</em> or press <kbd>Ctrl/Cmd+Shift+E</kbd> — there is no background or always-on access to your tabs.</li>
+            <li>Your saved chats are stored locally in this browser (<code>chrome.storage.local</code>) and are never sent anywhere.</li>
+            <li>Supported sites with dedicated extraction: ChatGPT, Claude, Gemini. Grok, Perplexity and Copilot are supported on a best-effort basis and other pages fall back to exporting your current text selection or the page's main content.</li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <span>ThreadKeep v0.1.0</span>
+      </footer>
+    </div>
+
+    <script src="js/pro.js"></script>
+    <script src="js/limits.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/scraper.js"></script>
+    <script src="js/options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,367 @@
+/* ThreadKeep popup styles — teal/green accent, light + dark aware. */
+
+:root {
+  --tk-accent: #0e9e8e;
+  --tk-accent-dark: #087a6e;
+  --tk-bg: #ffffff;
+  --tk-bg-subtle: #f4f7f6;
+  --tk-text: #16211f;
+  --tk-text-muted: #5b6b68;
+  --tk-border: #dfe7e5;
+  --tk-danger: #b3261e;
+  --tk-warning: #a15c00;
+  --tk-success: #0e7a4f;
+  --tk-radius: 10px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tk-accent: #2ec4b0;
+    --tk-accent-dark: #1c9c8c;
+    --tk-bg: #14201e;
+    --tk-bg-subtle: #1b2926;
+    --tk-text: #eaf3f1;
+    --tk-text-muted: #9db3af;
+    --tk-border: #2a3a37;
+    --tk-danger: #ff8a80;
+    --tk-warning: #ffcc80;
+    --tk-success: #7fe0b8;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 360px;
+  background: var(--tk-bg);
+  color: var(--tk-text);
+  font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  gap: 12px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-icon {
+  border-radius: 6px;
+  display: block;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--tk-bg-subtle);
+  color: var(--tk-text-muted);
+  border: 1px solid var(--tk-border);
+}
+
+.badge.badge-pro {
+  background: var(--tk-accent);
+  color: #ffffff;
+  border-color: var(--tk-accent);
+}
+
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--tk-text);
+}
+
+.export-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: var(--tk-bg-subtle);
+  border: 1px solid var(--tk-border);
+  border-radius: var(--tk-radius);
+}
+
+.format-fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+}
+
+.radio-row,
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 16px;
+}
+
+.pro-hint {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--tk-accent-dark);
+  background: color-mix(in srgb, var(--tk-accent) 18%, transparent);
+  border-radius: 4px;
+  padding: 1px 5px;
+  letter-spacing: 0.03em;
+}
+
+.primary-btn {
+  appearance: none;
+  border: none;
+  border-radius: 8px;
+  background: var(--tk-accent);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: var(--tk-accent-dark);
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.primary-btn:focus-visible,
+.link-btn:focus-visible,
+.upgrade-link:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--tk-accent);
+  outline-offset: 2px;
+}
+
+.status {
+  min-height: 16px;
+  font-size: 12.5px;
+  margin: 0;
+  color: var(--tk-text-muted);
+}
+
+.status-success {
+  color: var(--tk-success);
+}
+
+.status-warning {
+  color: var(--tk-warning);
+}
+
+.status-error {
+  color: var(--tk-danger);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--tk-border);
+  margin: 0;
+}
+
+.library-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.library-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.link-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  color: var(--tk-accent-dark);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+.search-input {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-bg);
+  color: var(--tk-text);
+  font-size: 13px;
+}
+
+.empty-state {
+  padding: 14px 4px;
+  color: var(--tk-text-muted);
+  font-size: 13px;
+}
+
+.empty-state p {
+  margin: 0 0 6px;
+}
+
+.chat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.chat-item {
+  border: 1px solid var(--tk-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--tk-bg);
+}
+
+.chat-title {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--tk-text);
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.chat-title:hover {
+  color: var(--tk-accent-dark);
+}
+
+.chat-sub {
+  font-size: 11.5px;
+  color: var(--tk-text-muted);
+  margin-top: 2px;
+  text-transform: capitalize;
+}
+
+.chat-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.chip-btn {
+  appearance: none;
+  border: 1px solid var(--tk-border);
+  background: var(--tk-bg-subtle);
+  color: var(--tk-text);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.chip-btn:hover:not(:disabled) {
+  border-color: var(--tk-accent);
+  color: var(--tk-accent-dark);
+}
+
+.chip-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chat-preview {
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--tk-bg-subtle);
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: var(--tk-text-muted);
+  white-space: pre-wrap;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.app-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--tk-text-muted);
+}
+
+.upgrade-link {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--tk-accent-dark);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 11.5px;
+}
+
+.upgrade-link:hover {
+  text-decoration: underline;
+}
+
+.footer-sep {
+  opacity: 0.6;
+}

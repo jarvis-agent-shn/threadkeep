@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="tkBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E9E8E" />
+      <stop offset="100%" stop-color="#087A6E" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="128" height="128" rx="26" fill="url(#tkBg)" />
+  <path
+    d="M38.4 20.5 H89.6 V101 L64 82.5 L38.4 101 Z"
+    fill="#ffffff"
+  />
+</svg>

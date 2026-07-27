@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ThreadKeep</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <div class="brand">
+          <img src="icons/icon48.png" alt="" width="24" height="24" class="brand-icon" />
+          <span class="brand-name">ThreadKeep</span>
+        </div>
+        <span id="plan-badge" class="badge">Free</span>
+      </header>
+
+      <form id="export-form" class="export-panel">
+        <h2 class="section-title">Export this chat</h2>
+
+        <fieldset class="format-fieldset">
+          <legend class="visually-hidden">Export format</legend>
+          <label class="radio-row">
+            <input type="radio" name="format" id="format-markdown" value="markdown" checked />
+            Markdown
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="format" id="format-json" value="json" />
+            JSON
+            <span id="json-pro-hint" class="pro-hint" hidden>Pro</span>
+          </label>
+        </fieldset>
+
+        <div class="checkbox-row">
+          <label class="checkbox-label">
+            <input type="checkbox" id="save-to-library" checked />
+            Save to library
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="download-file" checked />
+            Download file
+          </label>
+        </div>
+
+        <button type="submit" id="export-btn" class="primary-btn">Export this chat</button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <hr class="divider" />
+
+      <section class="library-panel" aria-labelledby="library-title">
+        <div class="library-header">
+          <h2 id="library-title" class="section-title">Your library</h2>
+          <button type="button" id="open-options" class="link-btn">Open full library</button>
+        </div>
+
+        <label class="visually-hidden" for="search">Search saved chats</label>
+        <input type="search" id="search" class="search-input" placeholder="Search saved chats…" />
+
+        <div id="empty-state" class="empty-state" hidden>
+          <p><strong>No saved chats yet.</strong></p>
+          <p>
+            Open a chat on ChatGPT, Claude, Gemini, Grok, Perplexity or Copilot, then click
+            <em>Export this chat</em> above with <em>Save to library</em> checked.
+          </p>
+        </div>
+
+        <ul id="chat-list" class="chat-list" hidden></ul>
+      </section>
+
+      <footer class="app-footer">
+        <button type="button" id="upgrade-link" class="upgrade-link">Upgrade to Pro</button>
+        <span class="footer-sep">·</span>
+        <span class="footer-shortcut">Shortcut: Ctrl/Cmd+Shift+E</span>
+      </footer>
+    </div>
+
+    <script src="js/pro.js"></script>
+    <script src="js/limits.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/scraper.js"></script>
+    <script src="js/popup.js"></script>
+  </body>
+</html>
