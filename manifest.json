@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "ThreadKeep — AI Chat Exporter",
+  "name": "ThreadKeep \u2014 AI Chat Exporter",
   "short_name": "ThreadKeep",
   "version": "0.1.0",
-  "description": "Export ChatGPT, Claude, Gemini, Grok, Perplexity and Copilot chats to clean Markdown or JSON, and keep a searchable local library.",
+  "description": "Export your AI chat conversations to clean Markdown or JSON, and keep a searchable, private local library.",
   "minimum_chrome_version": "116",
   "action": {
     "default_popup": "popup.html",
-    "default_title": "ThreadKeep — Export this chat",
+    "default_title": "ThreadKeep \u2014 Export this chat",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
@@ -23,7 +23,12 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["activeTab", "scripting", "storage", "downloads"],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "downloads"
+  ],
   "commands": {
     "export-chat": {
       "suggested_key": {

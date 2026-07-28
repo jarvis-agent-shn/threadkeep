@@ -1,5 +1,9 @@
 # One-time Chrome Web Store listing — ThreadKeep
 
+> RESUBMIT NOTE (keyword-spam rejection fix): The description below no longer lists multiple
+> brand names. Re-paste the Summary + Description below over the old ones, then Submit for review.
+> The manifest summary was also fixed and re-uploaded via API.
+
 Item already created & package uploaded via API (id: odmaiafckfdjphfneijfjifaflbohada).
 Dashboard: https://chrome.google.com/webstore/devconsole → click ThreadKeep item.
 Fill the tabs below, then **Submit for review**. Future package updates are automated via API.
@@ -14,12 +18,12 @@ final package update before you submit — ping me and I'll push the clean build
 - **Screenshots:** `1-hero.png`, `2-library.png`, `3-features.png` (1280×800)
 - **Small promo tile:** `promo-440x280.png`
 - **Summary (≤132 chars):**
-  Export and save your ChatGPT, Claude & Gemini conversations to Markdown or JSON, with a searchable local library.
+  Export and save your AI chatbot conversations to Markdown or JSON, with a searchable, private local library.
 - **Description:**
   Your best AI conversations shouldn't vanish into an endless scroll. ThreadKeep lets you export and archive them in one click.
 
   ★ One-click export — save the AI chat you're viewing to clean Markdown or JSON. Headers, code blocks, and links preserved.
-  ★ Works across assistants — dedicated support for ChatGPT, Claude, and Gemini, with a generic fallback so it still works elsewhere (or on your current text selection).
+  ★ Works across major AI assistants — with a generic fallback so it still works on other sites (or on your current text selection).
   ★ Searchable library — keep every saved conversation in one place and find it later by title or content.
   ★ Private by design — everything stays on your device. No accounts, no tracking, no servers. Nothing is uploaded.
 
