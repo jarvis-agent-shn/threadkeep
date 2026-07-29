@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "ThreadKeep \u2014 AI Chat Exporter",
   "short_name": "ThreadKeep",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Export your AI chat conversations to clean Markdown or JSON, and keep a searchable, private local library.",
   "minimum_chrome_version": "116",
   "action": {
